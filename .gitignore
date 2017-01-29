@@ -1,0 +1,5 @@
+.DS_Store
+example-stream
+bin/*.app
+*.mp4
+xcuserdata
