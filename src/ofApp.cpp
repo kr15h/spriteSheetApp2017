@@ -45,10 +45,13 @@ void ofApp::update(){
 		}
 		
 		if(message.getAddress() == "/mapper/nextSurface"){
+			mapper.setMode(ofx::piMapper::Mode::MAPPING_MODE);
 			mapper.selectNextSurface();
 		}else if(message.getAddress() == "/mapper/nextVertex"){
+			mapper.setMode(ofx::piMapper::Mode::MAPPING_MODE);
 			mapper.selectNextVertex();
 		}else if(message.getAddress() == "/mapper/moveSelection"){
+			mapper.setMode(ofx::piMapper::Mode::MAPPING_MODE);
 			float x = message.getArgAsFloat(0);
 			float y = message.getArgAsFloat(1);
 			mapper.moveSelection(ofVec2f(x, y));
