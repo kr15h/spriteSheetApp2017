@@ -43,6 +43,16 @@ void ofApp::update(){
 		}else if(message.getAddress() == "/spriteSheetApp/sa/frameNumber"){
 			sa.setFrame(message.getArgAsInt(0));
 		}
+		
+		if(message.getAddress() == "/mapper/nextSurface"){
+			mapper.selectNextSurface();
+		}else if(message.getAddress() == "/mapper/nextVertex"){
+			mapper.selectNextVertex();
+		}else if(message.getAddress() == "/mapper/moveSelection"){
+			float x = message.getArgAsFloat(0);
+			float y = message.getArgAsFloat(1);
+			mapper.moveSelection(ofVec2f(x, y));
+		}
 	}
 
 	mapper.update();
