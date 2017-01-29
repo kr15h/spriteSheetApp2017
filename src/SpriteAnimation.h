@@ -10,4 +10,18 @@ class SpriteAnimation : public ofx::piMapper::FboSource{
 		void draw();
 	
 		void setName(string newName);
+		void play();
+		void stop();
+		void setFrame(int number);
+	
+		ofImage sheet;
+	
+		int frameWidth;
+		int frameHeight;
+		int frameNumber;
+	
+		float frameRate;
+		float lastFrameTime;
+	
+		bool playing;
 };

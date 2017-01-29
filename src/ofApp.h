@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "TestPattern.h"
+#include "SpriteAnimation.h"
 #include "ofxPiMapper.h"
 #include "ofxOsc.h"
 
@@ -20,6 +21,7 @@ class ofApp : public ofBaseApp{
 	
 		TestPattern tpA;
 		TestPattern tpB;
+		SpriteAnimation sa;
 
 		ofxPiMapper mapper;
 	

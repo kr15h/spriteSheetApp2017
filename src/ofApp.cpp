@@ -12,8 +12,11 @@ void ofApp::setup(){
 	tpB.setName("Test Pattern B");
 	tpB.setDrawColor(ofColor::yellow);
 	
+	sa.setName("Sprite Animation");
+	
 	mapper.registerFboSource(tpA);
 	mapper.registerFboSource(tpB);
+	mapper.registerFboSource(sa);
 	mapper.setup();
 }
 
@@ -37,6 +40,8 @@ void ofApp::update(){
 				message.getArgAsInt(1),
 				message.getArgAsInt(2));
 			tpB.setDrawColor(color);
+		}else if(message.getAddress() == "/spriteSheetApp/sa/frameNumber"){
+			sa.setFrame(message.getArgAsInt(0));
 		}
 	}
 
@@ -63,6 +68,10 @@ void ofApp::keyPressed(int key){
 		message.addIntArg((int)ofRandom(255));
 		message.addIntArg((int)ofRandom(255));
 		oscSender.sendMessage(message);
+	}else if(key == '7'){
+		sa.play();
+	}else if(key == '8'){
+		sa.stop();
 	}
 
 	mapper.keyPressed(key);
